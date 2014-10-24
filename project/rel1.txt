@@ -1,0 +1,37 @@
+Relatório da Entrega Intermédia - Projecto PO
+
+Grupo #48 
+
+Alunos: 
+73630 - Patrícia Santos;
+73701 - Rodrigo Monteiro.
+
+No que diz respeito à entrega intermédia do projecto, optámos por utilizar diferentes estruturas
+para armazenar diferentes objectos. O critério para tal foi a necessidade de organizarmos (ou não)
+os objectos nas estruturas, de os idenficarmos com uma chave única (key) para posteriormente
+poderem ser procurados dentro dessas estruturas para qualquer fim necessário (remoção, edição,
+obtenção de dados).
+
+Decidimos armazenar os restaurantes (sobre a forma de treemap), os clientes, os alertas e os 
+alimentos (também em treemaps) no Outlet para facilitar os acessos a todas as estruturas de dados,
+através do Outlet. Utilizámos treemaps nestes casos, uma vez que estas permitem manter os seus
+elementos ordenados, seleccioná-los utilizando o seu identificador único e têm custos de inserção, 
+procura e remoção relativamente baixos em comparação com estruturas semelhantes.
+
+Em relação à lista de encomendas, na classe CarrinhoCompras, escolhemos usar também uma treemap pelas 
+mesmas razões que anteriormente foram referidas.
+
+Na classe AlimentoAgregado, optámos por usar duas arraylists, uma para os constituintes de cada 
+alimento agregado, e outra para a percentagem de cada alimento de um alimento agregado. Esta decisão
+pareceu-nos a mais acertada, visto que nestas lista não era preciso ordenação, coisa que as arraylists
+não fazem. Outra razão para esta escolha foi o facto de coordenarmos as inserções e procuras nestas
+duas arraylists, nomeadamente: o alimento x que faz parte do alimento composto em causa está no mesmo
+índice da arraylist dos componentes que a sua respectiva percentagem no alimento composto, no arraylist
+das percentagens. (exemplo: se existir 20% de cenoura no alimento composto "Salada", e a cenoura estiver 
+no índice 1 da arraylist dos compomentes, a sua percentagem estará no índice 1 da arraylist das
+percentagens.
+
+Por fim, na classe Restaurante, decidimos utilizar uma arraylist para conter os pratos do dia de cada restaurante, 
+porque, visto que o identificador único do prato do dia é o seu nome, e pode haver mais que um prato do dia com o
+mesmo nome, as procuras por pratos do dia numa treemap seriam complicadas, pois haveriam pratos com as mesmas chaves.
+

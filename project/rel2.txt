@@ -1,0 +1,43 @@
+Relatório da Entrega Final- Projecto PO
+
+Grupo #48 
+
+Alunos: 
+73630 - Patrícia Santos;
+73701 - Rodrigo Monteiro. 
+
+Em relação ao que foi dito no primeiro relatório, notámos que haveriam alterações a ser feitas.
+
+O que foi dito a respeito das estruturas utilizadas para os alertas e para a lista de encomendas, 
+no relatório anterior, foi alterado.
+Usámos então, quer para os alertas na classe Clientes, que contem os alertas de cada cliente, 
+quer para as encomendas na classe CarrinhoCompras, que tem as encomendas efectuadas por cada 
+cliente, arraylists. Isto deve-se ao facto destas não inserirem naturalmente os elementos por 
+ordem, que não é necessário para a função que desempenham.
+
+Como referido no relatório anterior, e pelas mesmas razões, decidimos manter o uso de treemaps 
+no outlet para os restaurantes, para os clientes e para os alimentos. 
+Porém, verificámos que era preciso que estes estivessem por ordem lexicográfica (UTF-8), não 
+havendo distinção entre minúsculas e maiúsculas, e implementámos um comparador que os insere pela 
+ordem pertendida.
+
+Na classe AlimentoAgregado, o que foi referido anteriormente relativo às arraylists para os 
+constituintes de cada alimento agregado, e para a percentagem de cada alimento de um alimento 
+agregado, mantem-se.
+Ainda nesta classe, foi necessário criar um arraylist de strings com aos componentes de cada 
+alimento agregado, quer estes sejam alimentos simples ou outros alimentos agregados. Esta
+arraylist de Strings é posteriormente enviada para o Manager para ser impressa, sem ser necessário
+o acesso do textui ao core, permitindo o encapsulamento do mesmo.
+
+Isto porque, o método utilizado na descrição de um alimento agregado faz a impressão das strings guardadas nesta
+arraylist componentes. Estas impressão é conseguida à custa de diversas verificações onde, se os 
+constituintes do alimento agregado a descrever forem alimentos simples é o utilizado o toString(int percentagem) 
+que imprime o tipo, o nome e a percentagem ao passo que se for um alimento agregado imprime primeiro o
+seu cabeçalho e, posteriormente utiliza toString(int percentagem) para imprimir os alimentos simples ou agregados que 
+o constituiem como descrito, sendo que no caso de "agregados dentro de agregados", esta função é chamada recursivamente.
+É então aqui usado o polimorfismo no método toString.
+
+Por fim, na classe Restaurante a utilização de uma arraylist com os pratos do dia de cada restaurante
+foi mantida, mas com uma alteração. Foi implementado um método de ordenação Collections.sort, porque 
+é necessário que os pratos quando listados apareçam por ordem e para esse efeito foi necessário 
+implementar a interface Comparable e o método compareTo no PratodoDia.
