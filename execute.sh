@@ -1,0 +1,1 @@
+java -cp /usr/share/java/po-uilib.jar:/usr/share/java/rest-core.jar:/usr/share/java/rest-textui-manager-support.jar:/usr/share/java/rest-textui-outlet-support.jar:/usr/share/java/rest-textui-manager.jar:/usr/share/java/rest-textui-outlet.jar: rest.textui.Manager
